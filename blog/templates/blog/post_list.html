@@ -10,16 +10,14 @@
        <h1><a href="/">Kelsie's Radical Blog</a></h1>
     </div>
 
-    <div>
-        <p>published: yesterday</p>
-        <h2><a href="">Django Day 1</a></h2>
-        <p>Inital Setup and Installation</p>
-    </div>
-
-    <div>
-        <p>published: today</p>
-        <h2><a href="">Django Day 2</a></h2>
-        <p>Python and Blog Posting</p>
-    </div>
+{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date }}</p>
+		<h2><a href="#">{{ post.title }}</a></h2>
+		<p>{{ post.text|linebreaksbr }}</p>
+	</div>
+{% endfor %}
+   
 </body>
 </html>
+
